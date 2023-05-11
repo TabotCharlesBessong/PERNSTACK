@@ -2,6 +2,7 @@ import { ThemeProvider } from 'styled-components'
 import { GlobalStyle, StyledApp } from './styled'
 import { darkTheme } from './theme'
 import {BrowserRouter as Router} from 'react-router-dom'
+import { Signup } from './component'
 
 function App() {
 
@@ -10,7 +11,7 @@ function App() {
       <ThemeProvider theme={darkTheme} >
         <GlobalStyle/>
         <StyledApp>
-          <h1>Hello</h1>
+          <Signup/>
         </StyledApp>
       </ThemeProvider>
     </Router>
