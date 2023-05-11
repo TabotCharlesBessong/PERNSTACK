@@ -13,7 +13,15 @@ function App() {
     <Router>
       <ThemeProvider theme={darkTheme}>
         <GlobalStyle />
-        <StyledApp>{user?.loggedIn ? "logged In" : <Signup />}</StyledApp>
+        <StyledApp>
+          {user?.loggedIn === null ? (
+            ""
+          ) : user?.loggedIn === true ? (
+            <SignedInApp />
+          ) : (
+            <Signup />
+          )}
+        </StyledApp>
       </ThemeProvider>
     </Router>
   );
