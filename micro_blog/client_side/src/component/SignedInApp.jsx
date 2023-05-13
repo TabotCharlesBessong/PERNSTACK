@@ -9,7 +9,7 @@ const SignedInApp = () => {
     <SignedInAppStyled>
       <Nav setModal={setModal} />
       <Routes>
-        <Route path="/" element={<Feed />} />
+        <Route path="/" element={'hello'} />
       </Routes>
       {modalOpen && <PostModal setModal={setModal} />}
     </SignedInAppStyled>

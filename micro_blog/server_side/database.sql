@@ -1,5 +1,5 @@
 -- Create db
-CREATE DATABASE social_media;
+CREATE DATABASE microBlog;
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
