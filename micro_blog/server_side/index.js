@@ -5,6 +5,7 @@ const session = require('express-session')
 const passport = require('passport')
 const indexRouter = require('./routes/indexRouter')
 const authRouter = require('./routes/authRouter')
+require('./auth')
 
 
 const port = process.env.PORT

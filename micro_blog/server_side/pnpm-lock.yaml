@@ -22,6 +22,9 @@ dependencies:
   passport-google-oauth20:
     specifier: ^2.0.0
     version: 2.0.0
+  passport-google-oidc:
+    specifier: ^0.1.0
+    version: 0.1.0
   pg:
     specifier: ^8.10.0
     version: 8.10.0
@@ -533,6 +536,13 @@ packages:
       passport-oauth2: 1.7.0
     dev: false
 
+  /passport-google-oidc@0.1.0:
+    resolution: {integrity: sha512-/TtFXaWvmubm5kXNoJMyzBfxhnZ0lnBPA6w6rmQMP9klmHZf0ArE8IrIEt3yAHoiDzGx4eTO7YasKQFbPsNtVA==}
+    engines: {node: '>= 0.4.0'}
+    dependencies:
+      passport-openidconnect: 0.1.1
+    dev: false
+
   /passport-oauth2@1.7.0:
     resolution: {integrity: sha512-j2gf34szdTF2Onw3+76alNnaAExlUmHvkc7cL+cmaS5NzHzDP/BvFHJruueQ9XAeNOdpI+CH+PWid8RA7KCwAQ==}
     engines: {node: '>= 0.4.0'}
@@ -542,6 +552,14 @@ packages:
       passport-strategy: 1.0.0
       uid2: 0.0.4
       utils-merge: 1.0.1
+    dev: false
+
+  /passport-openidconnect@0.1.1:
+    resolution: {integrity: sha512-r0QJiWEzwCg2MeCIXVP5G6YxVRqnEsZ2HpgKRthZ9AiQHJrgGUytXpsdcGF9BRwd3yMrEesb/uG/Yxb86rrY0g==}
+    engines: {node: '>= 0.6.0'}
+    dependencies:
+      oauth: 0.9.15
+      passport-strategy: 1.0.0
     dev: false
 
   /passport-strategy@1.0.0:

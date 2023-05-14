@@ -7,7 +7,7 @@ router.get('/',(req,res) => {
   res.send('auth')
 })
 
-router.get('/google',passport.authenticate('google',{
+router.get('/google',passport.authenticate("google",{
   scope:'profile'
 }))
 
