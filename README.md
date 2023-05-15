@@ -2,5 +2,6 @@
 ## PostgresSql
 ## Express
 ## React Js
-## Node js 
+## Node js
+## Typescript 
 ### Related projects and applications
