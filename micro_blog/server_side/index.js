@@ -1,38 +1,19 @@
-const express = require('express')
+
 require('dotenv').config()
-const cors = require('cors')
+const express = require('express')
+const path = require('path')
 const session = require('express-session')
+const cookieParser = require('cookie-parser')
+const csurf = require('csurf')
 const passport = require('passport')
-const indexRouter = require('./routes/indexRouter')
-const authRouter = require('./routes/authRouter')
-require('./auth')
+const logger = require('morgan')
+const exp = require('constants')
 
 
-const port = process.env.PORT
+
+// app
 const app = express()
-
-// middlewares
-app.use(cors({
-  credentials:true,
-  origin:process.env.CLIENT_URL
-}))
-
-app.use(session({
-  secret:process.env.COOKIE_SECRET,
-  cookie:{
-    secure:process.env.NODE_ENV === 'production' ? 'true' : 'auto',
-    sameSite:process.env.NODE_ENV === 'production' ? 'none' : 'lax'
-  },
-  resave:false,
-  saveUninitialized:false
-}))
-
-app.use(passport.initialize())
-app.use(passport.session)
-
-// routes
-app.use('/',indexRouter)
-app.use('/auth',authRouter)
+const port = process.env.PORT
 
 app.listen(port, ()=> {
   console.log(`Server is running on port number ${port}...`)
