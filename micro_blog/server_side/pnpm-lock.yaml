@@ -4,6 +4,12 @@ dependencies:
   connect-ensure-login:
     specifier: ^0.1.1
     version: 0.1.1
+  connect-sqlite3:
+    specifier: ^0.9.13
+    version: 0.9.13
+  constants:
+    specifier: ^0.0.2
+    version: 0.0.2
   cookie-parser:
     specifier: ^1.4.6
     version: 1.4.6
@@ -43,6 +49,9 @@ dependencies:
   pg:
     specifier: ^8.10.0
     version: 8.10.0
+  pluralize:
+    specifier: ^8.0.0
+    version: 8.0.0
   sqlite3:
     specifier: ^5.1.6
     version: 5.1.6
@@ -315,8 +324,24 @@ packages:
     engines: {node: '>= 0.4.0'}
     dev: false
 
+  /connect-sqlite3@0.9.13:
+    resolution: {integrity: sha512-4Dif7wjNutcAsvvl85nqApIa3gViEnN6lKOcEBEtuL9JB1DIq1bREcq0pQCc1oCpSvDGpjsFs0doftzGFc4cmQ==}
+    engines: {node: '>=0.4.x'}
+    dependencies:
+      sqlite3: 5.1.6
+    transitivePeerDependencies:
+      - bluebird
+      - encoding
+      - supports-color
+    dev: false
+
   /console-control-strings@1.1.0:
     resolution: {integrity: sha512-ty/fTekppD2fIwRvnZAVdeOiGd1c7YXEixbgJTNzqcxJWKQnjJ/V1bNEEE6hygpM3WjwHFUVK6HTjWSzV4a8sQ==}
+    dev: false
+
+  /constants@0.0.2:
+    resolution: {integrity: sha512-K8aYHRLm9Q/b/Im6CQESZdkH7fblazlncmqPujXt9DP5bxKfi7vVNjRKXx70SnnwCkW6R86o3AcSnkXL7XLq4g==}
+    engines: {node: '>= 0.4'}
     dev: false
 
   /content-disposition@0.5.4:
@@ -1293,6 +1318,11 @@ packages:
   /picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
+    dev: false
+
+  /pluralize@8.0.0:
+    resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
+    engines: {node: '>=4'}
     dev: false
 
   /postgres-array@2.0.0:

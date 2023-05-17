@@ -1,6 +1,6 @@
 
 const express = require('express')
-const ensureLogin = require('connect-ensure-login')
+const ensureLogin = require('connect-ensure-login').ensureLoggedIn
 const db = require('../db')
 
 const ensureLoggedIn = ensureLogin()
