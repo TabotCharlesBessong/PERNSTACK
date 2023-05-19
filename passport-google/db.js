@@ -1,12 +1,11 @@
+var sqlite3 = require('sqlite3');
+var mkdirp = require('mkdirp');
 
-const sqlite = require('sqlite3')
-const mkdirp = require('mkdirp')
+mkdirp.sync('./var/db');
 
-mkdirp.sync('./var/db')
+var db = new sqlite3.Database('./var/db/todos.db');
 
-const db = new sqlite.Database('./var/db/todos.db')
-
-db.serialize(() => {
+db.serialize(function() {
   db.run("CREATE TABLE IF NOT EXISTS users ( \
     id INTEGER PRIMARY KEY, \
     username TEXT UNIQUE, \
@@ -14,7 +13,7 @@ db.serialize(() => {
     salt BLOB, \
     name TEXT \
   )");
-
+  
   db.run("CREATE TABLE IF NOT EXISTS federated_credentials ( \
     id INTEGER PRIMARY KEY, \
     user_id INTEGER NOT NULL, \
@@ -29,6 +28,6 @@ db.serialize(() => {
     title TEXT NOT NULL, \
     completed INTEGER \
   )");
-})
+});
 
-module.exports = db
+module.exports = db;
