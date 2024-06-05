@@ -8,6 +8,7 @@
     "strict": true ,
     "skipLibCheck": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "outDir": "dist",
   }
 }

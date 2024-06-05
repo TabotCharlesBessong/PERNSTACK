@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --watch chat_server/src --exec ts-node chat_server/src/index.ts",
+		"build": "tsc && npm install && prisma generate --schema=./chat_server/prisma/schema.prisma && npm install --prefix frontend && npm run build --prefix frontend",
+		"start": "nodemon src/index.ts"
   },
   "keywords": [],
   "author": "",
