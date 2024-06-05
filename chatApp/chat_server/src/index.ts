@@ -7,12 +7,14 @@ import dotenv from "dotenv"
 const app = express()
 dotenv.config()
 
+const port = process.env.PORT || 5000
+
 app.use(cookieParser())
 app.use(express.json())
 
 app.use("/api/auth",authRouter)
-// app.use("/api/messages",messagesRouter)
+app.use("/api/messages",messagesRouter)
 
-app.listen(5000,()=>{
-  console.log("Server is running on port 5000....")
+app.listen(port,()=>{
+  console.log(`Server is running on https://localhost:${port} ....`)
 })
