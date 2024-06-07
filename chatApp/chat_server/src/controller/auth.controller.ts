@@ -102,6 +102,17 @@ export const logout = async (req: Request, res: Response) => {
   }
 };
 
+export const getAllUsers = async (req: Request, res: Response) => {
+  try {
+    const users = await prisma.user.findMany();
+
+    res.status(200).json(users);
+  } catch (error: any) {
+    console.log("Error in getAllUsers controller", error.message);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
 export const getMe = async (req: AuthenticatedRequest, res: Response) => {
   try {
     const user = await prisma.user.findUnique({ where: { id: req.user.id } });
