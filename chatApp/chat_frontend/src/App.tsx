@@ -1,9 +1,23 @@
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Login, Signup } from "./pages";
+
 const App = () => {
   return (
-    <div className="flex items-center justify-center">
-      <div>
-        <h1 className="text-center text-2xl text-orange-700">Hello people</h1>
-      </div>
+    <div className="p-4 h-screen flex items-center justify-center">
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <h1 className="text-center text-2xl text-orange-700">
+                Hello people
+              </h1>
+            }
+          />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+      </Router>
     </div>
   );
 };
