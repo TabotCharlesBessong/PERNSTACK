@@ -1,8 +1,11 @@
-import React from 'react'
+import { MessageSkeleton, Sidebar } from "../components"
 
 const Login = () => {
   return (
-    <div>Login</div>
+    <div>
+      <Sidebar />
+      <MessageSkeleton />
+    </div>
   )
 }
 
