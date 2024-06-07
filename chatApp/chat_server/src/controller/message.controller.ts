@@ -6,6 +6,9 @@ export const sendMessage = async (req: Request, res: Response) => {
     const { message } = req.body;
     const { id: receiverId } = req.params;
     const senderId = req.user.id;
+    if(senderId == receiverId){
+      return res.status(500).json({error:"User can not send message to themselves"})
+    }
     let conversation = await prisma.conversation.findFirst({
       where: { participantIds: { hasEvery: [senderId, receiverId] } },
     });
