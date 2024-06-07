@@ -6,8 +6,10 @@ export const sendMessage = async (req: Request, res: Response) => {
     const { message } = req.body;
     const { id: receiverId } = req.params;
     const senderId = req.user.id;
-    if(senderId == receiverId){
-      return res.status(500).json({error:"User can not send message to themselves"})
+    if (senderId == receiverId) {
+      return res
+        .status(500)
+        .json({ error: "User can not send message to themselves" });
     }
     let conversation = await prisma.conversation.findFirst({
       where: { participantIds: { hasEvery: [senderId, receiverId] } },
@@ -56,6 +58,19 @@ export const getMessages = async (req: Request, res: Response) => {
     res.status(200).json(conversation.messages);
   } catch (error) {
     console.error("Error in getMessages: ", (error as TypeError).message);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+export const getUsersForSidebar = async (req: Request, res: Response) => {
+  try {
+    const authUserId = req.user.id;
+    const users = await prisma.user.findMany({
+      where: { id: { not: authUserId } },
+      select: { id: true, fullName: true, profilePic: true },
+    });
+    res.status(200).json(users);
+  } catch (error) {
     res.status(500).json({ error: "Internal server error" });
   }
 };
