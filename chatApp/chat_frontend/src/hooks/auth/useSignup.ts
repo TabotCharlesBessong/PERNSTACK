@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAuthContext } from "../context/AuthContext";
+import { useAuthContext } from "../../context/AuthContext";
 import toast from "react-hot-toast";
 
 type SignupInputs = {
@@ -25,7 +25,7 @@ const useSignup = () => {
         body: JSON.stringify(inputs),
       });
       const data = await res.json();
-      console.log(data)
+      console.log(data);
 
       if (!res.ok) throw new Error(data.error);
       setAuthUser(data);

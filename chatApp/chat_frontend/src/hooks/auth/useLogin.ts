@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAuthContext } from "../context/AuthContext";
+import { useAuthContext } from "../../context/AuthContext";
 import toast from "react-hot-toast";
 
 const useLogin = () => {
@@ -16,7 +16,7 @@ const useLogin = () => {
       });
 
       const data = await res.json();
-      console.log(data)
+      console.log(data);
       if (!res.ok) throw new Error(data.error);
       setAuthUser(data);
     } catch (error: any) {
